@@ -8,7 +8,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.mainactivity.ListMapActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             //untuk pindah ke page berikutnya
-            val  intent = Intent(this, ListMapActivity::class.java)
+            val  intent = Intent(this, ListWisata::class.java)
             startActivity(intent)
             finish()
         },3000)

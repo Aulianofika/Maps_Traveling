@@ -1,6 +1,5 @@
 package com.example.mainactivity.Adapter
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mainactivity.R
 import com.example.mainactivity.model.ModelWisata
-import com.example.mainactivity.DetailWisataActivity
+import com.example.mainactivity.DetailWisata
 
 
 class adapterWisata (
@@ -27,7 +26,7 @@ class adapterWisata (
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyviewHolder {
         val nView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.itemwisata,parent,false)
+            .inflate(R.layout.itemlistwisata,parent,false)
         return MyviewHolder(nView)
     }
 
@@ -37,17 +36,17 @@ class adapterWisata (
 
     override fun onBindViewHolder(holder: MyviewHolder, position: Int) {
         val currentItem = itemListWisata[position]
-        holder.imgwisata.setImageResource(currentItem.image)
+        holder.imgwisata.setImageResource(currentItem.img)
         holder.txtnama.setText(currentItem.nama)
         holder.txtdaerah.setText(currentItem.daerah)
 
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
-            val intent = Intent(context, DetailWisataActivity::class.java).apply {
+            val intent = Intent(context, DetailWisata::class.java).apply {
                 // Mengirim data melalui intent
-                putExtra("deskripsi", currentItem.deskripsi)
+                putExtra("deskripsi", currentItem.des)
                 putExtra("namaWisata",currentItem.nama)
-                putExtra("imagewisata", currentItem.image)
+                putExtra("imagewisata", currentItem.img)
                 putExtra("latitude", currentItem.latitude)
                 putExtra("longitude", currentItem.longitude)
             }

@@ -26,10 +26,10 @@
             android:label="@string/title_activity_maps" />
 
         <activity
-            android:name=".DetailWisataActivity"
+            android:name=".DetailWisata"
             android:exported="false" />
         <activity
-            android:name=".ListMapActivity"
+            android:name=".ListWisata"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
